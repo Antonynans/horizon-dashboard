@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@reduxjs/toolkit': ^1.8.5
   '@syncfusion/ej2': ^20.4.48
+  '@syncfusion/ej2-base': ^20.4.48
   '@syncfusion/ej2-react-calendars': ^20.4.48
   '@syncfusion/ej2-react-charts': ^20.4.48
   '@syncfusion/ej2-react-dropdowns': ^20.4.48
@@ -36,6 +37,7 @@ specifiers:
 dependencies:
   '@reduxjs/toolkit': 1.9.2_k4ae6lp43ej6mezo3ztvx6pykq
   '@syncfusion/ej2': 20.4.48
+  '@syncfusion/ej2-base': 20.4.48
   '@syncfusion/ej2-react-calendars': 20.4.48
   '@syncfusion/ej2-react-charts': 20.4.48
   '@syncfusion/ej2-react-dropdowns': 20.4.48

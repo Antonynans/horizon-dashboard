@@ -6,11 +6,11 @@ import { chatData } from "../data/dummy";
 import NavButton from "./NavButton";
 import Button from "./Button";
 
-const Chat = () => {
+const Chat: React.FC<any> = () => {
   const { currentColor } = useStateContext();
 
   return (
-    <div className="nav-item absolute right-5 md:right-52 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg  w-[23rem] md:w-96">
+    <div className="nav-item absolute right-5 md:right-52 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg  w-[23rem] md:w-96 z-50">
       <div className="flex justify-between items-center">
         <div className="flex gap-3">
           <p className="font-semibold text-lg dark:text-gray-200">Messages</p>
@@ -43,10 +43,6 @@ const Chat = () => {
                 src={item.image}
                 alt={item.message}
                 className="rounded-full h-10 w-10"
-              />
-              <span
-                style={{ background: item.dotColor }}
-                className="absolute inline-flex rounded-full h-2 w-2 right-0 -top-1"
               />
             </div>
             <div>

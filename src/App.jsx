@@ -23,7 +23,6 @@ import Employees from './pages/Employees';
 import Kanban from './pages/Kanbar';
 import Orders from './pages/Orders';
 
-// import Home from './pages/Home';
 
 const App = () => {
   const {
@@ -47,22 +46,21 @@ const App = () => {
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
-              <div className="flex relative dark:bg-main-dark-bg">
+      <div className="flex relative dark:bg-main-dark-bg">
+        <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
+          <TooltipComponent content="settings" position="Top">
+            <button
+              type="button"
+              className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+              style={{ background: currentColor, borderRadius: '50%' }}
+              onClick={() => setThemeSettings(true)}
+            >
+              <FiSettings />
+            </button>
+          </TooltipComponent>
+        </div>
 
-              <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-            <TooltipComponent content="settings" position="Top">
-              <button
-                type="button"
-                className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-                style={{ background: currentColor, borderRadius: "50%" }}
-                onClick={() => setThemeSettings(true)}
-              >
-                <FiSettings />
-              </button>
-            </TooltipComponent>
-          </div>
-
-              {activeMenu ? (
+        {activeMenu ? (
           <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white z-50">
             <Sidebar />
           </div>
@@ -72,44 +70,39 @@ const App = () => {
           </div>
         )}
 
-       
-
-<div
-            className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
-              activeMenu ? "md:ml-72" : " flex-2"
-            }`}
-          >
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-              <Navbar />
-            </div>
-<div>
-{themeSettings && <ThemeSettings />}
-        <Routes>
-          <Route path="/" element={<Ecommerce />} />
-          <Route path="/ecommerce" element={<Ecommerce />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/employees" element={<Employees />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/kanban" element={<Kanban />} />
-          <Route path="/editor" element={<Editor />} />
-          <Route path="/color-picker" element={<ColorPicker />} />
-          <Route path="/line" element={<Line />} />
-          <Route path="/area" element={<Area />} />
-          <Route path="/bar" element={<Bar />} />
-          <Route path="/line" element={<Line />} />
-          <Route path="/pie" element={<Pie />} />
-          <Route path="/financial" element={<Financial />} />
-          <Route path="/color-mapping" element={<ColorMapping />} />
-          <Route path="/pyramid" element={<Pyramid />} />
-          <Route path="/stacked" element={<Stacked />} />
-
-
-        </Routes>
-    </div>
-    </div>
-
-    </div>
+        <div
+          className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
+            activeMenu ? 'md:ml-72' : ' flex-2'
+          }`}
+        >
+          <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
+            <Navbar />
+          </div>
+          <div>
+            {themeSettings && <ThemeSettings />}
+            <Routes>
+              <Route path="/" element={<Ecommerce />} />
+              <Route path="/ecommerce" element={<Ecommerce />} />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/employees" element={<Employees />} />
+              <Route path="/customers" element={<Customers />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/kanban" element={<Kanban />} />
+              <Route path="/editor" element={<Editor />} />
+              <Route path="/color-picker" element={<ColorPicker />} />
+              <Route path="/line" element={<Line />} />
+              <Route path="/area" element={<Area />} />
+              <Route path="/bar" element={<Bar />} />
+              <Route path="/line" element={<Line />} />
+              <Route path="/pie" element={<Pie />} />
+              <Route path="/financial" element={<Financial />} />
+              <Route path="/color-mapping" element={<ColorMapping />} />
+              <Route path="/pyramid" element={<Pyramid />} />
+              <Route path="/stacked" element={<Stacked />} />
+            </Routes>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
